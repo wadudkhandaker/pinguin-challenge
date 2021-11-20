@@ -1,0 +1,42 @@
+.board-responsive {
+    display: block;
+    width: 1400px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0 auto;
+    .board { 
+        width: 100%; 
+        border-collapse: collapse;
+        .row{
+            height: 120px;
+            position: relative;
+            .col{ 
+                border-bottom: 1px solid #ccc; 
+                text-align: left;
+                display: inline-block;
+                width: 1280px;
+                height: 100%;
+                position: relative;
+                &:first-child {
+                    border-bottom: 0px;
+                    width: 120px;
+                    position: relative;
+                    vertical-align: top;
+                    .label-name{
+                        position: relative;
+                        top: 45%;
+                    }  
+                }
+                .card-container {
+                    position: absolute;
+                    height: 120px;
+                    background-color: red;
+                    top: 10;
+                    left: 0;
+                }
+            }
+            
+        }
+         
+    }
+}

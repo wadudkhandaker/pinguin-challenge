@@ -1,0 +1,14 @@
+.dialog {
+    width: 600px;
+    .title {
+        border-bottom: 1px solid #ccc;
+    }
+    .form-container {
+        .mat-form-field {
+            width: 100%;
+        }
+        &.ck-editor {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="board-responsive">
+    <div class="board">
+      <div class="row" *ngFor="let label of cardLabels">
+        <div class="col">
+          <div class="label-name">
+            {{label}}
+          </div>
+        </div>
+        <div class="col" [id]="label" #container>
+          {{label | taskCard: columnWidth: dataSource}}
+        </div>
+      </div>
+    </div>
+</div>
+

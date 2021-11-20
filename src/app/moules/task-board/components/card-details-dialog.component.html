@@ -1,0 +1,32 @@
+<div *ngIf="data" class="dialog">
+    <h2 mat-dialog-title class="title">{{data?.key}} Details</h2>
+    <mat-dialog-content class="mat-typography">
+        <form [formGroup]="formGroup">
+            <div class="form-container">
+                <mat-form-field appearance="fill">
+                  <mat-label>Sumary</mat-label>
+                  <input matInput placeholder="pat@example.com" formControlName="summary">
+                </mat-form-field>
+            </div>
+            <div class="form-container ck-editor">
+                <ck-editor name="editor1" [ngModelOptions]="{standalone: true}"
+                 [(ngModel)]="description" skin="moono-lisa" language="en" [config]="ckEditorConfig"></ck-editor>
+            </div>
+            <div class="form-container">              
+                <mat-form-field appearance="fill">
+                    <mat-label>Labels</mat-label>
+                    <mat-select formControlName="labels">
+                        <ng-container *ngFor="let label of data?.fields?.labels">
+                            <mat-option *ngIf="label !== 'Roadmap'"  [value]="label">{{label}}</mat-option>
+                        </ng-container>
+                      
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+        </form>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+</div>
