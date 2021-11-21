@@ -1,11 +1,12 @@
 import { render, RenderResult } from '@testing-library/angular';
 import { TaskBoardComponent } from './task-board.component';
 import { TaskBoardModule } from './task-board.module';
+import { HttpClientModule } from '@angular/common/http';
 
 async function renderComponent(): Promise<any> {
   return render(TaskBoardComponent, {
     excludeComponentDeclaration: true,
-    imports: [TaskBoardModule]
+    imports: [TaskBoardModule, HttpClientModule]
   });
 }
 

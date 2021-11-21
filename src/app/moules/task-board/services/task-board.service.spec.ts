@@ -1,26 +1,19 @@
-import { render, RenderResult } from '@testing-library/angular';
 import { TaskBoardService } from './task-board.service';
-import { TaskBoardComponent } from './../task-board.component';
-import { TaskBoardModule } from './../task-board.module';
-
-async function renderComponent(): Promise<any> {
-  return render(TaskBoardComponent, {
-    excludeComponentDeclaration: true,
-    imports: [TaskBoardModule]
-  });
-}
+import { HttpClient } from '@angular/common/http';
+import { Inject } from '@angular/core';
 
 describe('TaskBoardService', () => {
-  let renderResult: RenderResult<TaskBoardService>;
   let service: TaskBoardService;
 
-  beforeEach(async () => {
-    renderResult = await renderComponent();
-    service = renderResult.fixture.debugElement.componentInstance;
+  beforeEach(() => {
+     service = new TaskBoardService(Inject(HttpClient));
   });
 
-  it('should create', () => {
-    expect(renderResult).toBeTruthy();
+  it('#getValue should return real value', () => {
+    const totalDays = 500;
+    const totalWidth = 1400;
+    service.getColumnWidth(totalDays, totalWidth);
+    expect(service.getColumnWidth(totalDays, totalWidth)).toBe(2.8);
   });
-
+ 
 });
