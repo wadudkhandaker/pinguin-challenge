@@ -1,9 +1,6 @@
 .board-responsive {
-    display: block;
-    width: 1400px;
     overflow-x: auto;
     overflow-y: hidden;
-    margin: 0 auto;
     .board { 
         width: 100%; 
         border-collapse: collapse;
@@ -38,5 +35,12 @@
             
         }
          
+    }
+}
+
+@media (min-width: 1400px) {
+    .board-responsive {
+       margin: 0 auto;
+       width: 1400px;
     }
 }
