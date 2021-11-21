@@ -9,7 +9,8 @@
     "test": "jest --detectOpenHandles",
     "test:coverage": "jest --coverage",
     "lint": "ng lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "ngcc"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
