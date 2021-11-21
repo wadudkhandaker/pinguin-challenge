@@ -13,14 +13,6 @@ export class TaskBoardService {
     return this.http.get<TaskBoard>(url);
   }
 
-  getQuarter(d: Date): number[] {
-    const date = d || new Date();
-    let month = Math.floor(date.getMonth() / 3) + 2;
-    month -= month > 4 ? 4 : 0;
-    const year = date.getFullYear() + (month === 1? 1 : 0);
-    return [year, month];
-  }
-
   secondsToDays(seconds: number): number {
     const sec = Number(seconds);
     const days = Math.floor(sec / (3600*24));

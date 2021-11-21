@@ -22,7 +22,7 @@ export interface Fields {
     aggregatetimeoriginalestimate: number;
     aggregatetimespent: string;
     assignee: string;
-    attachment: Attachment[];
+    attachment?: Attachment[];
     comment: Comment;
     components?: string[];
     created: string;
@@ -94,7 +94,7 @@ export interface RenderedFields {
     aggregatetimeoriginalestimate: string
     aggregatetimespent: string;
     assignee: string;
-    attachment: Attachment;
+    attachment?: Attachment;
     comment: Comment;
     components: string;
     created: string;

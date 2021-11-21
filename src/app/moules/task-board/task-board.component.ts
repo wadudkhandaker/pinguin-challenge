@@ -10,32 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class TaskBoardComponent implements OnInit, OnDestroy {
   subscription: Subscription = new Subscription;
-  columns = [
-    {
-      columnDef: 'labels',
-      header: '',
-      cell: ((element: Issues): string[] => {
-        return element.fields.labels.filter((label)=> label === 'Roadmap')
-      }),
-    },
-    {
-      columnDef: 'name',
-      header: 'Name',
-      cell: (element: Issues): string  => `${element.fields.duedate}`,
-    },
-    {
-      columnDef: 'weight',
-      header: 'Weight',
-      cell: (element: Issues): string  => `${element.fields.duedate}`,
-    },
-    {
-      columnDef: 'symbol',
-      header: 'Symbol',
-      cell: (element: Issues): string => `${element.fields.duedate}`,
-    },
-  ];
   dataSource: Issues[] = [];
-  displayedColumns = this.columns.map(c => c.columnDef);
   totalWorkingDays = 0;
   cardLabels: string[] = [];
   columnWidth = 0;
